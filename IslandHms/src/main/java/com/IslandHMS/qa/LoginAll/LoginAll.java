@@ -17,7 +17,7 @@ public class LoginAll extends TestBase {
 	public WebElement submit_button;
 	
 	public LoginAll(){
-		//initializing all fields
+		//initializing page objects
 		PageFactory.initElements(driver, this);
 	}
 	
