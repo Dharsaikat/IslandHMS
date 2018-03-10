@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.IslandHMS.qa.DoctorTestcases.Patient_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="search_patient_in_patient_listing_Test"/>
+          <include name="new_patient_form_fillup_Test"/>
+          <include name="new_patient_add_Test"/>
+          <include name="new_patient_add_button_click_Test"/>
+        </methods>
+      </class> <!-- com.IslandHMS.qa.DoctorTestcases.Patient_Test -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
