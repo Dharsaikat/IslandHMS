@@ -1,5 +1,5 @@
 package com.IslandHMS.qa.DoctorPages;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -48,7 +48,7 @@ public class Patients extends TestBase {
 		//initializing page objects
 		PageFactory.initElements(driver, this);
 	}
-	public void new_patient_add_button_click()
+	public  void new_patient_add_button_click()
 	{
 		new_patient_button.click();
 	}
@@ -58,7 +58,7 @@ public class Patients extends TestBase {
 		 driver.getCurrentUrl();
 	}
 	
-	public void new_patient_form_fillup(String fname,String lname,String mname,String gender,CharSequence[] phnumber)
+	public void new_patient_form_fillup(String fname,String lname,String mname,String gender,String phnumber,String date)
 	{
 		new_patient_add_firstname.sendKeys(fname);
 		new_patient_add_last_name.sendKeys(lname);
@@ -67,6 +67,7 @@ public class Patients extends TestBase {
 		pstatus.selectByVisibleText("Awaiting reply");
 		new_patient_add_patient_sex.sendKeys(gender);
 		new_patient_add_patient_phone_number.sendKeys(phnumber);
+		new_patient_add_patient_date_of_birth.sendKeys(date);
 		
 	}
 	
@@ -78,6 +79,21 @@ public class Patients extends TestBase {
 	public void new_patient_cancel()
 	{
 		new_patient_add_patient_cancel_button.click();
+	}
+	
+	public void search_patient_in_patient_listing(String fname)
+	{
+		
+		String searched_patient=driver.findElement(By.xpath("//tr[@class=\"clickable\"]//child::td//following-sibling::td")).getText();
+		if(searched_patient.equalsIgnoreCase(fname))
+		{
+		 System.out.println("patient is found in table" + fname);	
+		}
+		else
+		{
+			System.out.println("patient is not found");
+		}
+		
 	}
 	
 

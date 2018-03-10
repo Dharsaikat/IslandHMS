@@ -24,8 +24,9 @@ public class TestBase {
 	public TestBase(){
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/crm"
+			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/IslandHMS"
 					+ "/qa/config/config.properties");
+			//D:\IslandHmsLocalGit\IslandHMS\IslandHms\src\main\java\com\IslandHMS\qa\config\config.properties//
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -39,11 +40,11 @@ public class TestBase {
 		
         String browserName = prop.getProperty("browser");
 		if(browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver");	
+			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");	
 			driver = new ChromeDriver(); 
 		}
 		else if(browserName.equals("FF")){
-			System.setProperty("webdriver.gecko.driver", "D:\\geckodriver");	
+			System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");	
 			driver = new FirefoxDriver(); 
 		}
 			e_driver = new EventFiringWebDriver(driver);
