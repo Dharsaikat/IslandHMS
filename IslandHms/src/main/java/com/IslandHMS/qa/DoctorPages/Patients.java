@@ -1,5 +1,8 @@
 package com.IslandHMS.qa.DoctorPages;
+import java.util.List;
+
 import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -42,6 +45,7 @@ public class Patients extends TestBase {
 	@FindBy(xpath="//button[@class=\"btn btn-default warning\"]")
 	public WebElement new_patient_add_patient_cancel_button;
 	
+	// @FindBy(xpath="")
 	
 	
 	public Patients(){
@@ -96,6 +100,31 @@ public class Patients extends TestBase {
 		
 	}
 	
+	//button[text()="Edit" and @class="btn btn-default neutral"]
+	public void edit_patient_from_table()
+	{
+		List<WebElement> edit_patient=driver.findElements(By.xpath("//button[text()=\"Edit\" and @class=\"btn btn-default neutral\"]"));
+		for(WebElement i:edit_patient)
+		{
+			i.click();
+			break;
+		}
+	}
+		
+	public void discharge_patient_from_table()
+		{
+			List<WebElement> discharge_patient=driver.findElements(By.xpath("//button[text()=\"Discharge\" and @class=\"btn btn-primary info\"]"));
+			for(WebElement j: discharge_patient)
+			{
+				j.click();
+				break;
+			}
+	    }
 
+	public Imaging imageing_page_click()
+	{
+		driver.findElement(By.xpath("//a[@id=\"ember671\"]")).click();
+		return new Imaging();
+	}
 
 }
