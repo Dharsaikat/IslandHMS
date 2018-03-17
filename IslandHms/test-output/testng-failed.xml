@@ -5,6 +5,7 @@
     <classes>
       <class name="com.IslandHMS.qa.DoctorTestcases.Patient_Test">
         <methods>
+          <include name="new_patients_add_url_check_Test"/>
           <include name="setUp"/>
           <include name="search_patient_in_patient_listing_Test"/>
           <include name="new_patient_form_fillup_Test"/>

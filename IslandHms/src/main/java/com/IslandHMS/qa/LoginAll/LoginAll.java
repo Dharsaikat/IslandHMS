@@ -21,6 +21,7 @@ public class LoginAll extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 	
+	
 	public Patients doctorLogin(String un,String pwd)
 	{
 		username.sendKeys(un);

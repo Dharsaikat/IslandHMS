@@ -45,7 +45,7 @@ public class Patients extends TestBase {
 	@FindBy(xpath="//button[@class=\"btn btn-default warning\"]")
 	public WebElement new_patient_add_patient_cancel_button;
 	
-	// @FindBy(xpath="")
+	
 	
 	
 	public Patients(){

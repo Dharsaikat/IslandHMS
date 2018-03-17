@@ -47,6 +47,7 @@ public class TestBase {
 			System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");	
 			driver = new FirefoxDriver(); 
 		}
+		    //for event firing purpose at the time of runtime//
 			e_driver = new EventFiringWebDriver(driver);
 			eventListener = new WebEventListener();
 			e_driver.register(eventListener);

@@ -1,6 +1,7 @@
 package com.IslandHMS.qa.DoctorTestcases;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.IslandHMS.qa.DoctorPages.Patients;
@@ -17,7 +18,7 @@ public class Patient_Test extends TestBase {
 		super();
 	}
 	
-	@BeforeMethod
+	@BeforeSuite
 	public void setUp(){
 		initialization();
 		loginAll = new LoginAll();
