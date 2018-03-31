@@ -88,14 +88,18 @@ public class Patients extends TestBase {
 	public void search_patient_in_patient_listing(String fname)
 	{
 		
-		String searched_patient=driver.findElement(By.xpath("//tr[@class=\"clickable\"]//child::td//following-sibling::td")).getText();
-		if(searched_patient.equalsIgnoreCase(fname))
+		//String searched_patient=driver.findElement(By.xpath("//tr[@class=\"clickable\"]//child::td//following-sibling::td")).getText();
+		List<WebElement> searched_patient=driver.findElements(By.xpath("//tr[@class=\"clickable\"]//child::td//following-sibling::td"));
+		for(WebElement name2:searched_patient)
 		{
-		 System.out.println("patient is found in table" + fname);	
-		}
-		else
-		{
-			System.out.println("patient is not found");
+			if(name2.getText().equalsIgnoreCase(fname))
+			{
+				System.out.println("patient is found in table" + fname);		
+			}
+			else
+			{
+				System.out.println("patient is not found");
+			}
 		}
 		
 	}

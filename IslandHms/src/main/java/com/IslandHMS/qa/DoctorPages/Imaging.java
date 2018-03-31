@@ -1,5 +1,7 @@
 package com.IslandHMS.qa.DoctorPages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -54,7 +56,7 @@ public class Imaging extends TestBase {
 	{
 		image_new_request.click();
 	}
-	public String image_new_request_page_title_chech()
+	public String image_new_request_page_title_check()
 	{
 		String page_title_1=driver.findElement(By.xpath("//h1[@class=\"view-current-title\"]")).getText();
 		return page_title_1;
@@ -77,6 +79,46 @@ public class Imaging extends TestBase {
 	public void image_new_request_form_fillup_add_button()
 	{
 		image_new_request_add_button.submit();
+	}
+	
+	public void image_new_request_form_fillup_cancel_button()
+	{
+		image_new_request_cancel_button.click();
+	}
+	
+	
+	
+	//searching any name in the list request//
+	public void search_image_request_in_listing(String patient_name)
+	{
+		List<WebElement> searched_patient_name_req= driver.findElements(By.xpath("//tr[@class=\"table-header\"]//following::tr[@class=\"clickable ember-view\"]//child::td[@class=\"requested-by\"]"));
+		for(WebElement name1:searched_patient_name_req)
+		{
+			if(name1.getText().equalsIgnoreCase(patient_name))
+			{
+				System.out.println("patient requested for image:" + patient_name);
+			}
+			else {
+				System.out.println("SORRY! patient name is not found in list" + patient_name);
+			}
+		}
+	}
+	
+	//searching any name in the list completed//
+	public void search_image_completed_in_listing(String patient_name)
+	{
+		List<WebElement> searched_patient_name_comp= driver.findElements(By.xpath("//table[@class=\"table imaging-completed-table\"]//child::tr//following-sibling::tr[@class=\"ember-view\"]//child::td[@class=\"requested-by\"]"));
+		for(WebElement name2:searched_patient_name_comp)
+		{
+			if(name2.getText().equalsIgnoreCase("patient_name"))
+			{
+				System.out.println("patient request completed:" + patient_name);
+			}
+			else
+			{
+				System.out.println("SORRY! patient name is not found in list\" + patient_name");
+			}
+		}
 	}
 	
 	
