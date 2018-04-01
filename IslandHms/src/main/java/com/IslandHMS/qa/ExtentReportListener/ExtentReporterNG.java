@@ -18,11 +18,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.IReporter;
 import com.relevantcodes.extentreports.LogStatus;
 
-import com.relevantcodes.extentreports.model.Test;
-
-
-public  class ExtentReporterNG implements IReporter{
-	
+public class ExtentReporterNG implements IReporter{
 	private ExtentReports extent;
 
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 import com.IslandHMS.qa.base.TestBase;
 
@@ -96,10 +97,12 @@ public class Imaging extends TestBase {
 		{
 			if(name1.getText().equalsIgnoreCase(patient_name))
 			{
-				System.out.println("patient requested for image:" + patient_name);
+				//System.out.println("patient requested for image:" + patient_name);
+				Reporter.log("patient requested for image:" + patient_name);
 			}
 			else {
-				System.out.println("SORRY! patient name is not found in list" + patient_name);
+				//System.out.println("SORRY! patient name is not found in list" + patient_name);
+				Reporter.log("SORRY! patient name is not found in list" + patient_name);
 			}
 		}
 	}
@@ -112,11 +115,13 @@ public class Imaging extends TestBase {
 		{
 			if(name2.getText().equalsIgnoreCase("patient_name"))
 			{
-				System.out.println("patient request completed:" + patient_name);
+				//System.out.println("patient request completed:" + patient_name);
+				Reporter.log("patient request completed:" + patient_name);
 			}
 			else
 			{
-				System.out.println("SORRY! patient name is not found in list\" + patient_name");
+				//System.out.println("SORRY! patient name is not found in list\" + patient_name");
+				Reporter.log("SORRY! patient name is not found in list\" + patient_name");
 			}
 		}
 	}
