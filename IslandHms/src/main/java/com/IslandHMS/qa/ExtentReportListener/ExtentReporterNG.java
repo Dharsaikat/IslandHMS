@@ -17,6 +17,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.IReporter;
 import com.relevantcodes.extentreports.LogStatus;
+import com.relevantcodes.extentreports.Report;
+import com.relevantcodes.extentreports.model.Test;
 
 public class ExtentReporterNG implements IReporter{
 	private ExtentReports extent;
@@ -31,7 +33,8 @@ public class ExtentReporterNG implements IReporter{
 
 			for (ISuiteResult r : result.values()) {
 				ITestContext context = r.getTestContext();
-
+                
+				//---result---//
 				buildTestNodes(context.getPassedTests(), LogStatus.PASS);
 				buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
 				buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
@@ -71,6 +74,31 @@ public class ExtentReporterNG implements IReporter{
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(millis);
 		return calendar.getTime();
+	}
+
+	public void start(Report report) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void stop() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void flush() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addTest(Test test) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setTestRunnerLogs() {
+		// TODO Auto-generated method stub
+		
 	}
 
 
