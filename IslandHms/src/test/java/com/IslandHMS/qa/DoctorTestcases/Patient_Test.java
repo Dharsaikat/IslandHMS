@@ -1,5 +1,6 @@
 package com.IslandHMS.qa.DoctorTestcases;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 //import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -9,8 +10,8 @@ import com.IslandHMS.qa.base.TestBase;
 
 public class Patient_Test extends TestBase {
 	
-	LoginAll loginAll;
-	Patients patient;
+	public LoginAll loginAll;
+	public Patients patient;
 	
 	
 	public Patient_Test()
@@ -62,5 +63,12 @@ public class Patient_Test extends TestBase {
     public void imageing_page_click_test()
     {
     	patient.imageing_page_click();
+    }
+    
+    @AfterMethod
+    
+    public void tearDown()
+    {
+    	driver.quit();
     }
 }

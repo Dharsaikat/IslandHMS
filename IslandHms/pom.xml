@@ -9,11 +9,53 @@
 
   <name>IslandHms</name>
   <url>http://maven.apache.org</url>
+  
+  
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.test.skip>false</maven.test.skip>
   </properties>
+  
+  <build>
+  <!-- ADDING COMPILER,SUREFIRE,SOURCE plugin and added testng.xml path -->
+  <plugins>
+  <plugin>
+  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+	
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-compiler-plugin</artifactId>
+	    <version>3.7.0</version>
+  </plugin>
+  <plugin>
+  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.21.0</version>
+    <configuration>
+    <suitexmlfiles>src\main\resource\testng.xml</suitexmlfiles>
+    </configuration>
+  </plugin>
+  
+  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-source-plugin</artifactId>
+    <version>3.0.1</version>
+    <executions>
+    <execution>
+    <id>attach-sources</id>
+    <goals>
+    <goal>jar</goal>
+    </goals>
+    </execution>
+    </executions>
+   </plugin>
+  
+  </plugins>
+  
+  </build>
 
   <dependencies>
     <dependency>

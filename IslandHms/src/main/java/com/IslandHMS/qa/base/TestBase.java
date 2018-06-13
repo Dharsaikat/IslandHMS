@@ -27,6 +27,7 @@ public class TestBase {
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/IslandHMS"
 					+ "/qa/config/config.properties");
 			//D:\IslandHmsLocalGit\IslandHMS\IslandHms\src\main\java\com\IslandHMS\qa\config\config.properties//
+			//"./src/main/java/com/IslandHMS" + "/qa/config/config.properties");//
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
