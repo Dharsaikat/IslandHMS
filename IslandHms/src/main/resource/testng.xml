@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Island Hospital testsuit funtional">
+
+	<listeners>
+		<listener class-name="com.IslandHMS.qa.ExtentReportListener.ExtentReporterNG" />
+	</listeners>
+
+
+	<test name="Island Hospital test funtional">
+		<classes>
+			<class name="com.IslandHMS.qa.LoginAll.LoginAll"></class>
+			<class name="com.IslandHMS.qa.DoctorPages.Patients"></class>
+			<class name="com.IslandHMS.qa.DoctorPages.Imaging"></class>
+
+		</classes>
+	</test>
+</suite>

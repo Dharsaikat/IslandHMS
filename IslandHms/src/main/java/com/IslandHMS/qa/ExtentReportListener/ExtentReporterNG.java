@@ -17,10 +17,9 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.IReporter;
 import com.relevantcodes.extentreports.LogStatus;
-import com.relevantcodes.extentreports.Report;
-import com.relevantcodes.extentreports.model.Test;
 
-public class ExtentReporterNG implements IReporter{
+
+public abstract class ExtentReporterNG implements IReporter{
 	private ExtentReports extent;
 
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
@@ -52,8 +51,8 @@ public class ExtentReporterNG implements IReporter{
 			for (ITestResult result : tests.getAllResults()) {
 				test = extent.startTest(result.getMethod().getMethodName());
 
-				test.setStartedTime(getTime(result.getStartMillis()));
-				test.setEndedTime(getTime(result.getEndMillis()));
+				/*test.setStartedTime(getTime(result.getStartMillis()));
+				test.setEndedTime(getTime(result.getEndMillis()));*/
 
 				for (String group : result.getMethod().getGroups())
 					test.assignCategory(group);
@@ -70,36 +69,7 @@ public class ExtentReporterNG implements IReporter{
 		}
 	}
 
-	private Date getTime(long millis) {
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTimeInMillis(millis);
-		return calendar.getTime();
-	}
 
-	public void start(Report report) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void stop() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void flush() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void addTest(Test test) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setTestRunnerLogs() {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 }

@@ -7,7 +7,9 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import com.IslandHMS.qa.base.TestBase;
 
-public class WebEventListener extends TestBase implements WebDriverEventListener{
+public class WebEventListener extends TestBase implements WebDriverEventListener {
+	
+	
 
 	public void afterAlertAccept(WebDriver arg0) {
 		// TODO Auto-generated method stub
@@ -110,7 +112,8 @@ public class WebEventListener extends TestBase implements WebDriverEventListener
 	}
 
 	public void onException(Throwable arg0, WebDriver arg1) {
-		// TODO Auto-generated method stub
+		System.out.println("Test case failed" + this.getClass().getName());
+		TestUtil.failed_Test_ScreenShot_Capture();
 		
 	}
 
