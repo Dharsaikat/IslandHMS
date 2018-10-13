@@ -23,6 +23,7 @@ public class TestBase {
 	
 	public TestBase(){
 		//test_base_class//
+		//specifying only property file as of now//
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/IslandHMS"

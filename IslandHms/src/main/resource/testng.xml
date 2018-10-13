@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Island Hospital testsuit funtional">
 
+    //added extent report listner to xml file--connectivity between extent report and xml suite file//
 	<listeners>
 		<listener class-name="com.IslandHMS.qa.ExtentReportListener.ExtentReporterNG" />
 	</listeners>
@@ -9,10 +10,7 @@
 
 	<test name="Island Hospital test funtional">
 		<classes>
-			<class name="com.IslandHMS.qa.LoginAll.LoginAll"></class>
-			<class name="com.IslandHMS.qa.DoctorPages.Patients"></class>
-			<class name="com.IslandHMS.qa.DoctorPages.Imaging"></class>
-
+			<class name="com.IslandHMS.qa.DoctorTestcases.Patient_Test"></class>
 		</classes>
 	</test>
 </suite>
