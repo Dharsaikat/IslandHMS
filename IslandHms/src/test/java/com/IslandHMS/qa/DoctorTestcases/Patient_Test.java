@@ -28,7 +28,7 @@ public class Patient_Test extends TestBase {
 
 	}
 
-	@Test(priority = 1 ,invocationCount=5,invocationTimeOut=5000)
+	@Test(priority = 0 ,invocationCount=5,invocationTimeOut=5000)
 	public void new_patient_add_button_click_Test() {
 		patient.new_patient_add_button_click();
 	}

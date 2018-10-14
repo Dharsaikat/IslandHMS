@@ -44,7 +44,7 @@ public class TestUtil extends TestBase {
 	
 	public static Object[][] getTestData(String sheetname) {
 		
-		 
+		 //getting data from excel
 		FileInputStream file = null;
 		try {
 			file = new FileInputStream(excel_test_data_path);
