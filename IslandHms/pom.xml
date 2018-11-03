@@ -35,7 +35,7 @@
     <version>2.21.0</version>
     <configuration>
     <suitexmlfiles>.\src\main\resource\testng.xml</suitexmlfiles>
-    
+    <!-- <suitexmlfiles>.\IslandHms\testng-sanity.xm</suitexmlfiles>  -->  
     </configuration>
   </plugin>
   
